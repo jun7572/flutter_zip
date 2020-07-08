@@ -50,7 +50,7 @@ public class FlutterzipPlugin implements FlutterPlugin, MethodCallHandler {
       String unzipPath= map.get("unzipPath");
       String outPath=map.get("outPath");
       //
-      ArchiveManager.unzip(unzipPath,outPath ,channel);
+      ArchiveManager.unzip(unzipPath,outPath ,channel,result);
 
 
     } else {

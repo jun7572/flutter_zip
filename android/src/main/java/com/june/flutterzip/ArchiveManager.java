@@ -26,7 +26,7 @@ import io.flutter.plugin.common.MethodChannel;
 public class ArchiveManager {
     static private  long unziplong=0;
     static private  long filesize=0;
-    static void unzip(String unzipPath, final String outPath ,final MethodChannel channel){
+    static void unzip(String unzipPath, final String outPath ,final MethodChannel channel,final MethodChannel.Result result){
                      unziplong=0;
 //        ZipUtil.unpack(new File(unzipPath), new File(outPath), Charset.forName("GBK"));
         //判断编码
@@ -66,7 +66,11 @@ public class ArchiveManager {
 
                 map.put("total",filesize);
                 map.put("percent",unziplong);
+
 //                channel.invokeMethod("process",map);
+               if(filesize==unziplong){
+                   result.success(null);
+               }
             }
         },Charset.forName(s));
         //
