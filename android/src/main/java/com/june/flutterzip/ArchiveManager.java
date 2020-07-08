@@ -66,7 +66,7 @@ public class ArchiveManager {
 
                 map.put("total",filesize);
                 map.put("percent",unziplong);
-                channel.invokeMethod("process",map);
+//                channel.invokeMethod("process",map);
             }
         },Charset.forName(s));
         //
