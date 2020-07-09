@@ -22,10 +22,15 @@
   } else if ([@"unpack" isEqualToString:call.method]){
      NSString *outPath = call.arguments[@"outPath"];
       NSString *unzipPath = call.arguments[@"unzipPath"];
-       BOOL success = [SSZipArchive unzipFileAtPath:unzipPath toDestination:outPath];
-      if(success){
-           result(@"ok");
-      }
+      @try{
+          BOOL success = [SSZipArchive unzipFileAtPath:unzipPath toDestination:outPath];
+               if(success){
+                    result(@"ok");
+               }
+          @catch(NSException *exception) {
+              printf(@"SSZipArchive==NSException")
+          }
+      
   }
 }
 
