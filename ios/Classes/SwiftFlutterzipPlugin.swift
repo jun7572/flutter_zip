@@ -1,8 +1,7 @@
 import Flutter
 import UIKit
 //SSZipArchiveDelegate
-import  SSZipArchive
-public class SwiftFlutterzipPlugin: NSObject, FlutterPlugin ,SSZipArchiveDelegate{
+public class SwiftFlutterzipPlugin: NSObject, FlutterPlugin{
     var channell : FlutterMethodChannel?
     init(channell:FlutterMethodChannel) {
         self.channell = channell;
@@ -25,8 +24,8 @@ public class SwiftFlutterzipPlugin: NSObject, FlutterPlugin ,SSZipArchiveDelegat
    let arguments = call.arguments as! Dictionary<String, AnyObject>
    let outPath = arguments["outPath"] as! String
    let unzipPath = arguments["unzipPath"] as! String
-        SSZipArchive.unzipFile(atPath: unzipPath, toDestination: outPath,delegate: self);
-          
+//        SSZipArchive.unzipFile(atPath: unzipPath, toDestination: outPath,delegate: self);
+//        result("ok");
            
     }
     
@@ -34,9 +33,12 @@ public class SwiftFlutterzipPlugin: NSObject, FlutterPlugin ,SSZipArchiveDelegat
     
     public func zipArchiveProgressEvent(_ loaded: UInt64, total: UInt64) {
         
-        var someDict:[String:UInt64] = ["total":total, "percent":loaded]
-
-        channell?.invokeMethod("process", arguments:someDict)
+//        var someDict:[String:UInt64] = ["total":total, "percent":loaded]
+        if(total==loaded){
+            
+            print("Progress==done");
+        }
+        //channell?.invokeMethod("process", arguments:someDict)
         
     }
     

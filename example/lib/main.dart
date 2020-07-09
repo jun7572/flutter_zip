@@ -60,10 +60,11 @@ class _MyAppState extends State<MyApp> {
   String  s="http://139.199.153.108:8080/2-05%20The%20Go-Kart.zip";
    directory = await getTemporaryDirectory();
 
-//  var savePath=directory.path+"/2-05 The Go-Kart.zip";
+  var savePath=directory.path+"/2-05 The Go-Kart.zip";
    unzipPath=directory.path+"/2-05 The Go-Kart.zip";
     outPath=directory.path+"/2-05 The Go-Kart";
-//  var response = await Dio().download(s,savePath);
+  var response = await Dio().download(s,savePath);
+  print("download====ok");
 
   //查看文件
 //   print("response.toString()=="+response.toString());
@@ -88,11 +89,12 @@ class _MyAppState extends State<MyApp> {
               child: Text('Running on: $_platformVersion\n'),
             ),
             RaisedButton(
-              onPressed: (){
-                  Flutterzip.unpack(unzipPath, outPath);
-                  Flutterzip.onProcessChange.stream.listen((event) {
-                    print("========="+event.toString());
-                  });
+              onPressed: ()async{
+                 await Flutterzip.unpack(unzipPath, outPath);
+                 print("okokoko");
+//                  Flutterzip.onProcessChange.stream.listen((event) {
+//                    print("========="+event.toString());
+//                  });
               },
               child: Text("解压"),
             ),

@@ -2,14 +2,12 @@ PODS:
   - Flutter (1.0.0)
   - flutterzip (0.0.1):
     - Flutter
-    - SSZipArchive (~> 2.0.7)
   - path_provider (0.0.1):
     - Flutter
   - path_provider_linux (0.0.1):
     - Flutter
   - path_provider_macos (0.0.1):
     - Flutter
-  - SSZipArchive (2.0.8)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -17,10 +15,6 @@ DEPENDENCIES:
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_linux (from `.symlinks/plugins/path_provider_linux/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
-
-SPEC REPOS:
-  trunk:
-    - SSZipArchive
 
 EXTERNAL SOURCES:
   Flutter:
@@ -36,11 +30,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutterzip: a8971d695daf2b81861b8f314a83e9c25d66f1d9
+  flutterzip: 8fc124115a0105514642ac325a3433a2ddf8067b
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
-  SSZipArchive: e6ab66e1936fac7e3b5073e9f5eb364d91dfbfc7
 
 PODFILE CHECKSUM: 084be47092790d3d5f09fbc6f87a2e8bf7177d4a
 
