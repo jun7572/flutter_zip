@@ -27,6 +27,7 @@
                if(success){
                     result(@"ok");
                }
+      }
           @catch(NSException *exception) {
               printf(@"SSZipArchive==NSException")
           }
